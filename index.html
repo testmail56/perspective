@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    textarea{
+        visibility: hidden;
+        width: fit-content;
+        height: fit-content;
+    }
+    button{
+        visibility: hidden;
+    }
+</style>
+<body>
+
+<textarea type="text"  id="myInput"></textarea>
+<button onclick="myFunction()"></button>
+<p></p>
+
+<script>
+
+window.addEventListener('load', ()=>{
+        document.querySelector("button").click()
+    })
+document.addEventListener('click', function(event) {
+   myFunction()
+});
+document.getElementById("myInput").value = `
+During my college days, I was a part of a cricket match where my teammate and I had completely different opinions on how to play the game. I used to think that we should play safely and increase the score gradually. However, my teammate thought that we should start attacking from the very beginning and increase the score quickly. This resulted in us not being very coordinated at the start, which impacted our comfort level while playing together. Rather than allowing the situation to escalate into an argument, I proposed that we discuss the matter during a brief break. We rationally expressed our ideas and heard out the reasons for the other person’s opinions. Following this, we jointly agreed to mix both styles of play by initially being gentle and then becoming aggressive once we were seated .This tiny detail made a huge difference. We could understand each other better, support each other on the field, and play with more confidence as a team.
+`
+
+function myFunction() {
+  
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+console.log(copyText.value)
+}
+</script>
+
+</body>
+</html>
